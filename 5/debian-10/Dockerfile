@@ -68,6 +68,8 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
 
 EXPOSE 8080 8443
 
+COPY httpd.conf /opt/bitnami/apache/conf/
+
 USER 1001
 ENTRYPOINT [ "/app-entrypoint.sh" ]
 CMD [ "httpd", "-f", "/opt/bitnami/apache/conf/httpd.conf", "-DFOREGROUND" ]
